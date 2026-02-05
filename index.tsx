@@ -6,6 +6,9 @@ import {
   Star, Quote, Phone, MapPin, Mail, Send
 } from 'lucide-react';
 
+// @ts-ignore
+import heroPhoto from './photo.jpg';
+
 // ==========================================
 // 1. TYPES & CONSTANTS
 // ==========================================
@@ -408,7 +411,7 @@ const CONTENT: Record<'ru' | 'pl', SiteContent> = {
       emailLabel: 'Email',
       emailSub: 'Preferowana forma kontaktu',
       tgLabel: 'Telegram',
-      phoneLabel: 'Telefon',
+      phoneLabel: 'Телефон',
       locLabel: 'Lokalizacja',
       faqTitle: 'Częste pytania',
       list: [
@@ -583,8 +586,6 @@ const Header: React.FC = () => {
 // --- Hero ---
 const Hero: React.FC = () => {
   const { content } = useLanguage();
-  // Using URL constructor to ensure Vite bundles the asset from root
-  const heroImage = new URL('./photo.jpg', import.meta.url).href;
 
   return (
     <section id={SectionId.HERO} className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -619,7 +620,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="lg:w-1/2 relative">
              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto">
-               <img src={heroImage} alt={content.hero.role} className="w-full h-full object-cover" />
+               <img src={heroPhoto} alt={content.hero.role} className="w-full h-full object-cover" />
                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-6 text-white">
                   <p className="font-serif text-xl">{content.hero.titleName}</p>
                   <p className="text-sm opacity-90">{content.hero.role}</p>
