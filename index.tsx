@@ -583,6 +583,9 @@ const Header: React.FC = () => {
 // --- Hero ---
 const Hero: React.FC = () => {
   const { content } = useLanguage();
+  // Using URL constructor to ensure Vite bundles the asset from root
+  const heroImage = new URL('./photo.jpg', import.meta.url).href;
+
   return (
     <section id={SectionId.HERO} className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-secondary/10 rounded-bl-[100px]"></div>
@@ -616,7 +619,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="lg:w-1/2 relative">
              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto">
-               <img src="./photo.jpg" alt={content.hero.role} className="w-full h-full object-cover" />
+               <img src={heroImage} alt={content.hero.role} className="w-full h-full object-cover" />
                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-6 text-white">
                   <p className="font-serif text-xl">{content.hero.titleName}</p>
                   <p className="text-sm opacity-90">{content.hero.role}</p>
