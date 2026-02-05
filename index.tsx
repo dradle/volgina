@@ -616,7 +616,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="lg:w-1/2 relative">
              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto">
-               <img src="./photo.jpg" alt={content.hero.role} className="w-full h-full object-cover" onError={(e) => { e.currentTarget.src = "https://picsum.photos/600/800?grayscale"; }} />
+               <img src="./photo.jpg" alt={content.hero.role} className="w-full h-full object-cover" />
                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-6 text-white">
                   <p className="font-serif text-xl">{content.hero.titleName}</p>
                   <p className="text-sm opacity-90">{content.hero.role}</p>
@@ -837,10 +837,10 @@ const TelegramFloat: React.FC = () => {
       href={CONTACT_INFO.telegram}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-40 bg-[#229ED9] text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+      className="fixed bottom-6 right-6 z-40 bg-[#229ED9] text-white w-16 h-16 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
       aria-label="Telegram"
     >
-      <Send size={28} className="-ml-1 mt-0.5" />
+      <Send size={28} />
       <span className="absolute right-full mr-4 bg-white text-dark px-3 py-1 rounded-lg text-sm font-medium shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
         Telegram
       </span>
